@@ -1,0 +1,325 @@
+/* ---------------- Small screen devices ---------------- */
+@media screen and (max-width: 640px) {
+  .sm-100 { width: 100%; }
+  .sm-50 { width: 50%; }
+  .sm-33 { width: 33.333%; }
+  .sm-25 { width: 25%; }
+  .sm-20 { width: 20%; }
+  .sm-16 { width: 16.66%; }
+
+  .hero {
+    padding-bottom: 10%;
+  }
+
+  .hero .container {
+    display: block;
+  }
+
+  .hero .trending-section {
+    padding-top: 20%;
+  }
+
+  .hero .heading h2 {
+    padding-top: 8%;
+  }
+
+  .hero .buttons {
+    display: flex;
+  }
+
+  .hero .trending-image {
+    width: 80%;
+  }
+
+  .article .content {
+    display: block;
+  }
+
+  .article .content .article-heading {
+    display: none;
+  }
+
+  .article .content .left .box1 .image,
+  .article .content .left .box2 .image,
+  .article .content .left .box3 .image {
+    display: block;
+    height: 100%;
+  }
+
+  .article .content .left .box1 .image .tech-text {
+    width: 64%;
+  }
+
+  .article .right {
+    width: 100%;
+  }
+
+  .authors {
+    padding-bottom: 12%;
+  }
+
+  .authors .authors-heading {
+    padding-bottom: 0px;
+  }
+
+  .authors .authors-heading .rightdiv {
+    position: absolute;
+    top: -26%;
+    right: 24%;
+  }
+
+  .authors .cards {
+    display: block;
+  }
+
+  .authors ul {
+    list-style: none;
+    margin-top: 13%;
+    margin-bottom: 13%;
+  }
+
+  .authors .cards .card1,
+  .authors .cards .card2,
+  .authors .cards .card3 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 4px solid #000;
+    box-shadow: 6px 6px #000;
+    width: 84%;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    margin: 6% auto;
+  }
+
+  .community {
+    padding-bottom: 10%;
+  }
+
+  .community .community-heading h3 {
+    width: 93%;
+  }
+
+  .community .community-heading p {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    font-size: 28px;
+  }
+
+  .community .info-reviews {
+    display: block;
+  }
+
+  .community .info-reviews .info {
+    width: 100%;
+    padding-top: 45px;
+  }
+
+  .community .info-reviews .info h4 {
+    font-size: 36px;
+    font-weight: 900;
+    width: 100%;
+  }
+
+  .community .reviews {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .footer .container {
+    display: block;
+  }
+
+  .footer .categories {
+    margin-top: 10%;
+    margin-bottom: 7%;
+  }
+
+  .footer .newsletter {
+    width: 75%;
+  }
+
+  .copy-right .container {
+    display: block;
+  }
+}
+
+/* ---------------- Medium screen devices ---------------- */
+@media screen and (max-width: 768px) {
+  .md-100 { width: 100%; }
+  .md-50 { width: 50%; }
+  .md-33 { width: 33.333%; }
+  .md-25 { width: 25%; }
+  .md-20 { width: 20%; }
+  .md-16 { width: 16.66%; }
+
+  .nav .lists {
+    display: none;
+  }
+
+  .nav .header-btn {
+    display: none;
+  }
+
+  .hero .container {
+    display: block;
+    padding-bottom: 7%;
+  }
+
+  .hero .trending-section {
+    padding-top: 10%;
+  }
+
+  .hero .trending-image {
+    width: 100%;
+  }
+
+  .article .content {
+    display: block;
+  }
+
+  .article .content .article-heading {
+    display: flex;
+    gap: 48px;
+  }
+
+  .article .content .left h3 {
+    font-size: 45px;
+  }
+
+  .article .content .left .box1,
+  .article .content .left .box2,
+  .article .content .left .box3 {
+    padding-bottom: 40%;
+    padding-left: 4%;
+    padding-right: 3%;
+  }
+
+  .article .content .left .box1 .image,
+  .article .content .left .box2 .image,
+  .article .content .left .box3 .image {
+    display: block;
+  }
+
+  .article .right {
+    width: 100%;
+    padding-top: 4%;
+  }
+
+  .article .cards {
+    display: block;
+  }
+
+  .authors .cards {
+    display: block;
+  }
+
+  .authors .cards .card1 .image .role {
+    top: 1%;
+    right: -190%;
+  }
+
+  .authors .cards .card2 .image .role {
+    top: 3%;
+    right: -201%;
+  }
+
+  .authors .cards .card3 .image .role {
+    top: 4%;
+    right: -203%;
+  }
+
+  .authors .cards .card1,
+  .authors .cards .card2,
+  .authors .cards .card3 {
+    width: 93%;
+    margin-bottom: 4%;
+    margin-left: 3%;
+  }
+
+  .community .reviews {
+    width: 100%;
+    margin-top: 11%;
+  }
+
+  .community .info-reviews {
+    display: block;
+  }
+
+  .community .info-reviews .info {
+    width: 100%;
+    padding-top: 45px;
+  }
+
+  .community .info-reviews .info h4 {
+    font-size: 33px;
+  }
+
+  .footer .container {
+    display: block;
+  }
+
+  .footer .categories {
+    margin-top: 10%;
+    margin-bottom: 7%;
+  }
+
+  .footer .newsletter {
+    width: 75%;
+  }
+
+  .copy-right .container {
+    display: block;
+  }
+}
+
+/* ---------------- Large screen devices ---------------- */
+@media screen and (max-width: 1024px) {
+  .lg-100 { width: 100%; }
+  .lg-50 { width: 50%; }
+  .lg-33 { width: 33.333%; }
+  .lg-25 { width: 25%; }
+  .lg-20 { width: 20%; }
+  .lg-16 { width: 16.66%; }
+
+  .nav .lists {
+    display: flex;
+  }
+
+  .nav .header-btn {
+    display: block;
+  }
+
+  .article .content .left .box1,
+  .article .content .left .box2,
+  .article .content .left .box3 {
+    padding-bottom: 40%;
+  }
+
+  .article .right {
+    width: 51%;
+  }
+  .article .container{
+        width: 95%;
+  }
+}
+
+/* ---------------- Extra large screen devices ---------------- */
+@media screen and (min-width: 1280px) {
+  .xl-100 { width: 100%; }
+  .xl-50 { width: 50%; }
+  .xl-33 { width: 33.333%; }
+  .xl-25 { width: 25%; }
+  .xl-20 { width: 20%; }
+  .xl-16 { width: 16.66%; }
+}
+
+/* ---------------- Extra extra large screen devices ---------------- */
+@media screen and (min-width: 1536px) {
+  .xxl-100 { width: 100%; }
+  .xxl-50 { width: 50%; }
+  .xxl-33 { width: 33.333%; }
+  .xxl-25 { width: 25%; }
+  .xxl-20 { width: 20%; }
+  .xxl-16 { width: 16.66%; }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Task</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="./css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <link rel="stylesheet" href="./style/style.css" />
+  <link rel="stylesheet" href="./css/media.css" />
+</head>
+
+<body>
+
+  <div class="box" id="boxSection">
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- NAV -->
+        <nav class="navbar bg-white py-3">
+          <div class="container d-flex justify-content-between align-items-center">
+
+            <div class="d-flex align-items-center gap-3">
+              <span class="logo-circle d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-utensils"></i>
+              </span>
+
+              <div class="d-flex flex-column">
+                <h3 class="fw-bold mb-0 brand-title pb-1">What's For Dinner</h3>
+                <small class="text-muted pt-0">Your daily meal inspiration</small>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-4">
+              <i class="fa-solid fa-bookmark nav-icon" ></i>
+              <i class="fa-solid fa-clock-rotate-left nav-icon"></i>
+              <i class="fa-solid fa-gear nav-icon"></i>
+              <img src="./images/radius-nav.jpg" class="nav-image" id="mealsImage" />
+            </div>
+
+          </div>
+        </nav>
+
+        <!-- MEAL SECTION -->
+        <div class="meal mt-2">
+          <div class="container my-4" id="receipeBtn">
+            <div class="row">
+
+              <!-- LEFT SIDE -->
+              <div class="col-md-6 p-0 brdr">
+                <div class="left-side">
+                  <img src="./images/pizza1.avif" class="mealsImage" id="mainMealImage" />
+
+                  <div class="topbox position-absolute" id="topBox">
+                    <i class="fa fa-star rating"></i>
+                    <!-- ✅ added id -->
+                    <span class="rate-text1" id="mealRating">4.5</span>
+                    <!-- ✅ keep same id used in JS -->
+                    <span id="reviews">(189 reviews)</span>
+                  </div>
+
+                  <div class="inner-box">
+                    <div class="container">
+                      <div class="row">
+
+                        <div class="col-md-4 innerbox1">
+                          <span><i class="fa fa-clock pb-3 clock"></i></span>
+                          <p class="pb-2 second-text">Prep Time</p>
+                          <!-- ✅ THIS is the value to change -->
+                          <p class="fw-bold" id="mealsPrepTime">15 min</p>
+                        </div>
+
+                        <div class="col-md-4 innerbox1">
+                          <span><i class="icons fa fa-fire-burner pb-3"></i></span>
+                          <p class="prep pb-2">Cook Time</p>
+                          <!-- ✅ THIS is the value to change -->
+                          <p class="fw-bold" id="mealsCookTime">15 min</p>
+                        </div>
+
+                        <div class="col-md-4 innerbox1">
+                          <span><i class="users fa fa-users pb-3"></i></span>
+                          <p class="prep pb-2">Servings</p>
+                          <!-- ✅ already used in JS -->
+                          <p class="fw-bold" id="mealsServings">4 people</p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- RIGHT SIDE -->
+              <div class="col-md-6">
+
+                <div class="right-side">
+                  <div class="easytype mt-4" id="mealsEasyType">
+                    <!-- ✅ used in JS -->
+                    <span class="type1" id="type1">Easy</span>
+                    <span class="type2" id="type2">Asian</span>
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <h2 class="curry fw-bold m-0" id="mealsName">Chicken Stir-Fry</h2>
+
+                    <div class="d-flex gap-2" id="iconBtns">
+                      <button class="icon-btn"><i class="fa-solid fa-bookmark"></i></button>
+                      <button class="icon-btn"><i class="fa-solid fa-share-nodes"></i></button>
+                    </div>
+                  </div>
+
+                  <p class="caption mt-2 pb-0" id="mealsCaption">
+                    Quick and healthy stir-fry with colorful vegetables
+                  </p>
+
+                  <!-- TABS -->
+                  <ul class="nav nav-tabs mt-4" id="mealTabs" role="tablist">
+
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="ingredients-tab" data-bs-toggle="tab"
+                        data-bs-target="#ingredients" type="button" role="tab">
+                        <i class="fa-solid fa-list-check "></i> Ingredients
+                      </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="instructions-tab" data-bs-toggle="tab"
+                        data-bs-target="#instructions" type="button" role="tab">
+                        <i class="fa-solid fa-book-open"></i> Instructions
+                      </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="nutrition-tab" data-bs-toggle="tab"
+                        data-bs-target="#nutrition" type="button" role="tab">
+                        <i class="fa-solid fa-apple-whole"></i> Nutrition
+                      </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="tips-tab" data-bs-toggle="tab"
+                        data-bs-target="#tips" type="button" role="tab">
+                        <i class="fa-solid fa-lightbulb"></i> Chef's Tips
+                      </button>
+                    </li>
+
+                  </ul>
+
+                  <!-- TAB CONTENT -->
+                  <div class="tab-content mt-4" id="mealTabsContent">
+
+                    <!-- Ingredients -->
+                    <div class="tab-pane fade show active" id="ingredients" role="tabpanel">
+                      <div class="ingredients-box p-3">
+                        <!-- ✅ JS fills this -->
+                        <ul class="ingredients-lists"></ul>
+                      </div>
+                    </div>
+
+                    <!-- Instructions -->
+                    <div class="tab-pane fade" id="instructions" role="tabpanel">
+                      <!-- ✅ JS fills this -->
+                      <div class="instructions-box mt-2"></div>
+                    </div>
+
+                    <!-- Nutrition -->
+                    <div class="tab-pane fade" id="nutrition" role="tabpanel">
+                      <!-- ✅ JS fills this -->
+                      <div class="nutrition-grid"></div>
+                    </div>
+
+                    <!-- Tips -->
+                    <div class="tab-pane fade" id="tips" role="tabpanel">
+                      <!-- ✅ JS fills this -->
+                      <div class="tips-box2 mt-2"></div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <button onclick="displayRandomMeals()" class="mx-5 mt-4 receipe mb-5">
+                  <i class="fa fa-rotate"></i> Try Another Recipe
+                </button>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>
