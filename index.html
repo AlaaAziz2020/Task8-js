@@ -1,369 +1,204 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assignment 9</title>
+  <title>Meal Task</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
   <link href="./css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="./css/media.css" />
 </head>
 
 <body>
 
-<!---------------- Navbar-------------->
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand d-flex justify-content-start mt-4 pb-1" href="#">
-      <span class="contacthub-icons">
-        <i class="fa-solid fa-address-book contacthub-icon text-white"></i>
-      </span>
+  <div class="box" id="boxSection">
+    <div class="container-fluid">
+      <div class="row">
 
-      <h1 class="contact-heading px-2 fw-bold">
-        Contact<span class="hub">Hub</span>
-        <p class="manager">Smart Contact Manager</p>
-      </h1>
-    </a>
+        <!-- NAV -->
+        <nav class="navbar bg-white py-3">
+          <div class="container d-flex justify-content-between align-items-center">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+            <div class="d-flex align-items-center gap-3">
+              <span class="logo-circle d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-utensils"></i>
+              </span>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="d-flex mb-lg-0 ms-auto justify-content-end gap-4 align-items-center">
-
-        <button class="addcontact"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#addContactModal">
-          <i class="fa fa-plus text-white plus-icon"></i>
-          <span class="text-white addcontact-btn" >Add Contact</span>
-        </button>
-    
-             <!-- <button class="addcontact"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#addContactModal">
-          <i class="fa fa-plus text-white plus-icon"></i>
-          <span class="text-white addcontact-btn" >Add Contact</span>
-        </button> -->
-
-        <span class="pt-2 bell">
-          <i class="fa fa-bell bell-icon"></i>
-        </span>
-
-        <span class="pt-2 setting">
-          <i class="fa fa-gear setting-icon"></i>
-        </span>
-
-        <div class="nav-img">
-          <img src="./images/avatar-4.jpg" alt="avatar">
-        </div>
-
-      </div>
-    </div>
-  </div>
-</nav>
-<!-------------- Navbar-------------->
-
-
-<!----------------Quick Stats------------>
-<div class="quick-stats mt-5">
-  <div class="container ">
-    <div class="row p-2 mt-5">
-
-      <div class="col-md-4 mt-5 bg-white d-flex justify-content-start total-sec">
-        <span class="totalbg">
-          <i class="fa fa-users total-icon text-white"></i>
-        </span>
-        <span class="total">
-          <p class="total-text1 text-uppercase pb-1">Total</p>
-          <p class="numbers fw-bold" id="totalCount">0</p>
-        </span>
-      </div>
-
-      <div class="col-md-4 mt-5 bg-white d-flex justify-content-start total-sec mx-2">
-        <span>
-          <i class="fa fa-star text-white favorite-icon"></i>
-        </span>
-        <span class="total">
-          <p class="total-text1 text-uppercase pb-1">favorites</p>
-          <p class="numbers fw-bold" id="favoriteCount">0</p>
-        </span>
-      </div>
-
-      <div class="col-md-4 mt-5 bg-white d-flex justify-content-start total-sec mx-2">
-        <span class="">
-          <i class="fa-solid fa-heart-pulse emergency-icon"></i>
-        </span>
-        <span class="total px-2">
-          <p class="total-text1 text-uppercase pb-2">Emergency</p>
-          <p class="numbers fw-bold" id="emergencyCount">0</p>
-        </span>
-      </div>
-
-    </div>
-  </div>
-</div>
-<!----------------Quick Stats--------->
-
-
-<!----------- Contacts-------- -->
-<div class="contacts">
-  <div class="container">
-    <div class="row pt-0">
-
-      <div class="col-md-9 form-section">
-        <div class="contacts-heading">
-          <h2 class="fw-bold allcontact pt-3">All Contacts</h2>
-          <p class="contacts-text2">Manage and organize your 0 contacts</p>
-
-          <form class="d-flex position-relative" role="search">
-            <input id="searchContact" class="form-control me-2 search-input" type="search"
-              placeholder="Search by name, phone, or email..." aria-label="Search" oninput="searchOnContacts()" />
-            <i class="fa fa-search position-absolute search-icon"></i>
-          </form>
-        </div>
-      </div>
-<div class="col-md-4 favorites-box mt-3">
-
-  <div class="favorites">
-    <div class="favorites-heading d-flex justify-content-lg-start pt-2">
-      <div>
-        <i class="fa fa-star star-icon"></i>
-      </div>
-      <div class="mx-3">
-        <h2 class="favorites-heading1">Favorites</h2>
-        <p class="favorites-text">Quick access to starred contacts</p>
-      </div>
-    </div>
-
-    <div id="favoriteContainer"></div>
-  </div>
- <p class="text-center pt-4 no-favorites mb-3" id="noFavorites">
-    No favorites yet
-  </p>
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-9 form-section text-center">
-             <div class="contactsContainer" id="contactsContainer"></div> 
-
-        <div class="nocontacts pb-3" id="noContacts">
-          <i class="fa fa-address-book bookicon"></i>
-          <div>
-            <p class="mb-0 pt-3 pb-1 nocontacts-text1">No contacts found</p>
-            <p class="nocontacts-text2">Click "Add Contact" to get started</p>
-          </div>
-        </div>
-        
-      </div>
-
-      <div class="col-md-4 favorites-box px-4 mt-3">
-        <div class="favorites2" >
-          <div class="favorites-heading d-flex justify-content-start ">
-            <div class="mt-3 px-2">
-              <i class="fa fa-heart-pulse emergency-icon"></i>
-            </div>
-            <div class=" px-2 pt-3">
-              <h2 class="favorites-heading1">Emergency</h2>
-              <p class="favorites-text favorites2-text">Important contacts for urgent calls</p>
-            </div>
-          </div>
-              <div id="emergencyBox"></div>
-
-        </div>
-        <p class="text-center pt-4 no-favorites2 mb-5" id="noEmergency">No emergency contacts</p>
-      </div>
-      
-
-    </div>
-  </div>
-</div>
-<!----------------- Contacts----------------------->
-<!---------------cards-------------------------->
-  <!-- <div id="contactsContainer"></div> -->
-  
-  <!--<div class="contact-card">
-
-  <div class="card-top">
-
-    <div class="avatar">
-      <span class="avatar-letter"></span>
-      <span class="badge favorite"><i class="fa fa-star"></i></span>
-      <span class="badge emergency"><i class="fa fa-heart"></i></span>
-    </div>
-
-    <div class="info">
-      <h4 class="name"></h4>
-
-      <div class="row-item">
-        <span class="icon phone"><i class="fa fa-phone"></span>
-        <span></span>
-      </div>
-
-      <div class="row-item">
-        <span class="icon email"><i class="fa fa-envelope"></i></span>
-        <span></span>
-      </div>
-
-      <div class="row-item">
-        <span class="icon location"><i class="fa fa-location"></i></span>
-        <span></span>
-      </div>
-
-      <div class="tags">
-        <span class="tag">Other</span>
-        <span class="tag emergency-tag"><i class="fa fa-heart"></i> </span>
-      </div>
-    </div>
-
-  </div> -->
-
-  <!-- <div class="card-actions">
-    <button class="action call"><i class="fa fa-phone"></i></button>
-    <button class="action mail"><i class="fa fa-envelope"></i></button>
-
-    <div class="right-actions">
-      <button><i class="fa fa-star"></i></button>
-      <button><i class="fa fa-heart heart"></i></button>
-    -->
-      <!-- <button id="updateContact" onclick=updateBtn()><i class="fa fa-edit" ></button>
-      <button><i class="fa fa-trash" id="deleteContact" onclick="deleteBtn()"></i></button> -->
-   <!---- </div>
-  </div> -->
-
-</div>
-
-</div> 
-<!---------------cards-------------------------->
-<div class="modal fade" id="addContactModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold">Add New Contact</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-
-        <!----------------------Profile--------------------->
-        <div class="profile-wrapper">
-          <div class="profile-image">
-            <img id="profileImage" />
-            <i class="fa fa-user profile-icon text-white"></i>
-          </div>
-
-          <label class="change-photo">
-            <i class="fa fa-camera camera"></i>
-            <span class="profile-text ">Change Photo</span>
-            <input type="file" id="avatarInput" accept="image/*" hidden>
-          </label>
-        </div>
-        <!----------------------Profile--------------------->
-
-        <!----------------------Form--------------------->
-        <form class="contact-form" id="contactForm">
-
-          <div class="mb-3">
-            <label class="form-label" >Full Name <span class="text-danger">*</span></label>
-            <input type="text" id="fullName" class="form-control" placeholder="Enter full name" oninput="validateContactName()" required>
-          </div>
-           <p id="nameRegexError" class="text-danger d-none">Name should contain only letters and spaces (2-50 characters)</p>
-                     <p id="nameRequiredError" class="text-danger d-none">Full Name is Required</p>
-           <div class="mb-3">
-            <label class="form-label ">Phone Number <span class="text-danger">*</span></label>
-            <input type="tel" class="form-control form-input" id= "phoneNumber" placeholder="e.g., 01012345678" oninput="validatePhoneNumber()" required>
-          </div>
-          <p id="phoneRegexError" class="text-danger d-none">Please enter a valid Egyptian phone number</p>
-          <p id="phoneRequiredError" class="text-danger d-none">phone number is Required</p>
-
-
-          <div class="mb-3">
-            <label class="form-label ">Email Address</label>
-            <input  type="email" class="form-control" id="emailAddress" placeholder="name@example.com" oninput="validateEmailAddress()" required>
-          </div>
-                 <p id="emailRegexError" class="text-danger d-none">Please enter a valid email address</p>
-          <p id="emailRequiredError" class="text-danger d-none"> email address is Required</p>
-
-
-          <div class="mb-3">
-            <label class="form-label ">Address</label>
-            <input type="text" class="form-control" placeholder="Enter address" id="addressInput">
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label " >Group</label>
-            <select class="form-select" id="groupSelect">
-              <option value="" selected disabled>Select a group</option>
-              <option value="family">Family</option>
-              <option value="friends">Friends</option>
-              <option value="work">Work</option>
-              <option value="other">Other</option>
-
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label " >Notes</label>
-            <textarea id="notesInput" class="form-control" rows="3" placeholder="Add notes about this contact"></textarea>
-          </div>
-
-          <div class="d-flex gap-4 mb-2">
-            <div class="form-check">
-               <input class="form-check-input" type="checkbox" id="favoriteCheck"> 
-              <label class="form-check-label" for="favorite">
-                <i class="fa-regular fa-star star-icon"></i> Favorite</label>
+              <div class="d-flex flex-column">
+                <h3 class="fw-bold mb-0 brand-title pb-1">What's For Dinner</h3>
+                <small class="text-muted pt-0">Your daily meal inspiration</small>
+              </div>
             </div>
 
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="emergencyCheck">
-              <label class="form-check-label" for="emergency">
-                <span>
- 
-                <i class="fa-solid fa-heart-pulse heartpluse"></i>
-                <span>Emergency</span>
-                </span>
-              </label>
+            <div class="d-flex align-items-center gap-4">
+              <i class="fa-solid fa-bookmark nav-icon" ></i>
+              <i class="fa-solid fa-clock-rotate-left nav-icon"></i>
+              <i class="fa-solid fa-gear nav-icon"></i>
+              <img src="./images/radius-nav.jpg" class="nav-image" id="mealsImage" />
+            </div>
+
+          </div>
+        </nav>
+
+        <!-- MEAL SECTION -->
+        <div class="meal mt-2">
+          <div class="container my-4" id="receipeBtn">
+            <div class="row">
+
+              <!-- LEFT SIDE -->
+              <div class="col-md-6 p-0 brdr">
+                <div class="left-side">
+                  <img src="./images/pizza1.avif" class="mealsImage" id="mainMealImage" />
+
+                  <div class="topbox position-absolute" id="topBox">
+                    <i class="fa fa-star rating"></i>
+                    <!-- ✅ added id -->
+                    <span class="rate-text1" id="mealRating">4.5</span>
+                    <!-- ✅ keep same id used in JS -->
+                    <span id="reviews">(189 reviews)</span>
+                  </div>
+
+                  <div class="inner-box">
+                    <div class="container">
+                      <div class="row">
+
+                        <div class="col-md-4 innerbox1">
+                          <span><i class="fa fa-clock pb-3 clock"></i></span>
+                          <p class="pb-2 second-text">Prep Time</p>
+                          <!-- ✅ THIS is the value to change -->
+                          <p class="fw-bold" id="mealsPrepTime">15 min</p>
+                        </div>
+
+                        <div class="col-md-4 innerbox1">
+                          <span><i class="icons fa fa-fire-burner pb-3"></i></span>
+                          <p class="prep pb-2">Cook Time</p>
+                          <!-- ✅ THIS is the value to change -->
+                          <p class="fw-bold" id="mealsCookTime">15 min</p>
+                        </div>
+
+                        <div class="col-md-4 innerbox1">
+                          <span><i class="users fa fa-users pb-3"></i></span>
+                          <p class="prep pb-2">Servings</p>
+                          <!-- ✅ already used in JS -->
+                          <p class="fw-bold" id="mealsServings">4 people</p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- RIGHT SIDE -->
+              <div class="col-md-6">
+
+                <div class="right-side">
+                  <div class="easytype mt-4" id="mealsEasyType">
+                    <!-- ✅ used in JS -->
+                    <span class="type1" id="type1">Easy</span>
+                    <span class="type2" id="type2">Asian</span>
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <h2 class="curry fw-bold m-0" id="mealsName">Chicken Stir-Fry</h2>
+
+                    <div class="d-flex gap-2" id="iconBtns">
+                      <button class="icon-btn"><i class="fa-solid fa-bookmark"></i></button>
+                      <button class="icon-btn"><i class="fa-solid fa-share-nodes"></i></button>
+                    </div>
+                  </div>
+
+                  <p class="caption mt-2 pb-0" id="mealsCaption">
+                    Quick and healthy stir-fry with colorful vegetables
+                  </p>
+
+                  <!-- TABS -->
+                  <ul class="nav nav-tabs mt-4" id="mealTabs" role="tablist">
+
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="ingredients-tab" data-bs-toggle="tab"
+                        data-bs-target="#ingredients" type="button" role="tab">
+                        <i class="fa-solid fa-list-check "></i> Ingredients
+                      </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="instructions-tab" data-bs-toggle="tab"
+                        data-bs-target="#instructions" type="button" role="tab">
+                        <i class="fa-solid fa-book-open"></i> Instructions
+                      </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="nutrition-tab" data-bs-toggle="tab"
+                        data-bs-target="#nutrition" type="button" role="tab">
+                        <i class="fa-solid fa-apple-whole"></i> Nutrition
+                      </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="tips-tab" data-bs-toggle="tab"
+                        data-bs-target="#tips" type="button" role="tab">
+                        <i class="fa-solid fa-lightbulb"></i> Chef's Tips
+                      </button>
+                    </li>
+
+                  </ul>
+
+                  <!-- TAB CONTENT -->
+                  <div class="tab-content mt-4" id="mealTabsContent">
+
+                    <!-- Ingredients -->
+                    <div class="tab-pane fade show active" id="ingredients" role="tabpanel">
+                      <div class="ingredients-box p-3">
+                        <!-- ✅ JS fills this -->
+                        <ul class="ingredients-lists"></ul>
+                      </div>
+                    </div>
+
+                    <!-- Instructions -->
+                    <div class="tab-pane fade" id="instructions" role="tabpanel">
+                      <!-- ✅ JS fills this -->
+                      <div class="instructions-box mt-2"></div>
+                    </div>
+
+                    <!-- Nutrition -->
+                    <div class="tab-pane fade" id="nutrition" role="tabpanel">
+                      <!-- ✅ JS fills this -->
+                      <div class="nutrition-grid"></div>
+                    </div>
+
+                    <!-- Tips -->
+                    <div class="tab-pane fade" id="tips" role="tabpanel">
+                      <!-- ✅ JS fills this -->
+                      <div class="tips-box2 mt-2"></div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <button onclick="displayRandomMeals()" class="mx-5 mt-4 receipe mb-5">
+                  <i class="fa fa-rotate"></i> Try Another Recipe
+                </button>
+
+              </div>
+
             </div>
           </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-light cancel-btn" data-bs-dismiss="modal">Cancel</button>
-      <button type="button" class="text-white save-btn" id="saveBtn" onclick="addContact()">
-  <i class="fa fa-check rightcheck"></i>
-  <span class="save">Save Contact</span>
-</button>
-      <button type="button" class="text-white save-btn d-none" id="updateBtn" onclick="updateContact()">
-  <i class="fa fa-check rightcheck"></i>
-  <span class="save">Update Contact</span>
-</button>
-
-     
-      </div>
-
-        </form>
-        <!----------------------Form--------------------->
-
+        </div>
 
       </div>
-
-  
     </div>
   </div>
-</div>
-<!------------ Modal--------------------->
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<script src="./bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-<script src="./js/main.js"></script>
+  <script src="./bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js"></script>
 
 </body>
+
 </html>
